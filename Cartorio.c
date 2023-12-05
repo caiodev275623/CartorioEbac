@@ -59,14 +59,11 @@ int registro()// Função respónsavel por cadastrar os usuários no sistema
     file = fopen(arquivo, "a");
     fprintf(file, ",");
     fclose(file);
-    
-
 }
 
 
 int consulta() // Função respónsavel por consultar os usuários do sistema
-{
-  
+{ 
     setlocale(LC_ALL, "Portuguese"); 
 		
 	char cpf[40];
@@ -91,8 +88,7 @@ int consulta() // Função respónsavel por consultar os usuários do sistema
 		printf("\n\n");
 	}
 	
-	system("pause");
-	
+	system("pause");	
 }
     
 int deletar()
@@ -120,8 +116,7 @@ else if(file != NULL) //caso o pedido do usuário for realizado
     	system("pause");
     	
     	remove(cpf);
-	}
-	
+	}	
 }
 
 int main()
@@ -141,6 +136,7 @@ int main()
      	printf("\t1 - Registrar nomes\n");
 	    printf("\t2 - Consultar os nomes\n");
 	    printf("\t3 - Deletar nomes  \n");
+	    printf("\t4 - Sair do sistema\n");
 	    printf("Opção:");// fim do menu
 	
      	scanf("%d", &opcao);//Armazenando as escolhas dos usúarios
@@ -161,14 +157,15 @@ int main()
 			case 3://int deletar
 			deletar();//chamada de funções
 	        break;
-	        	        
+	        
+	        printf("Obrigado por utilizar o sistema!\n");
+	        return 0;
+	        break;
+				        
 	        default://caso o pedido do usuário não existir
 	        printf("Essa opção não está disponivel! \n");
 	        system ("pause");
-	        break;
-		    	
-		} //Fim da seleção
-	
-    }
-	
+	        break;		    	
+		} //Fim da seleção	
+    }	
 }
